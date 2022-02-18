@@ -25,7 +25,7 @@
 							</text>
 						</text>
 						<text>
-							到手价
+							券后价
 							<text class="discountPrice">
 								￥<text class="price">{{item.vipPrice}}</text>
 							</text>
