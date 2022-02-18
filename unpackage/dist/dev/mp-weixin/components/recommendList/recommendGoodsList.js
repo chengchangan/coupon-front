@@ -217,7 +217,7 @@ var _default =
       // }
       ],
       items: [{
-        // "img": "https://img.alicdn.com/bao/uploaded/i2/4023086328/O1CN01qbWmtk1wcGzVxbfgA_!!0-item_pic.jpg",
+        "img": "https://img.alicdn.com/bao/uploaded/i2/4023086328/O1CN01qbWmtk1wcGzVxbfgA_!!0-item_pic.jpg",
         "id": 576605326949,
         "price": 108,
         "name": "红双喜正品水泥地耐磨幼儿园3小学生7成人篮球5号儿童4青少年定制,红双喜正品水泥地耐磨幼儿园3小学生7成人篮球5号儿童4青少年定制",
@@ -228,7 +228,7 @@ var _default =
         "salesQty": 10 },
 
       {
-        // "img": "https://img.alicdn.com/bao/uploaded/i4/574598446/O1CN01e5csOM2CGJuJ9iq7G_!!0-item_pic.jpg",
+        "img": "https://img.alicdn.com/bao/uploaded/i4/574598446/O1CN01e5csOM2CGJuJ9iq7G_!!0-item_pic.jpg",
         "price": 44.9,
         "name": "红双喜羽毛球拍双拍耐用型成人儿童小学生超轻全碳素单拍套装正品",
         "vipPrice": 44.9,
@@ -239,7 +239,7 @@ var _default =
         "id": 8275748347 },
 
       {
-        // "img": "https://img.alicdn.com/bao/uploaded/i1/4023086328/O1CN01ghJ4Kc1wcGxlprWoM_!!0-item_pic.jpg",
+        "img": "https://img.alicdn.com/bao/uploaded/i1/4023086328/O1CN01ghJ4Kc1wcGxlprWoM_!!0-item_pic.jpg",
         "price": 128,
         "name": "红双喜足球5号成人4号四号小学生3号儿童幼儿园训练比赛耐磨软皮",
         "vipPrice": 39.9,
@@ -250,7 +250,7 @@ var _default =
         "id": 582818222083 },
 
       {
-        // "img": "https://img.alicdn.com/bao/uploaded/i4/707376852/O1CN01i7IAk920UGZmb3iXQ_!!0-item_pic.jpg",
+        "img": "https://img.alicdn.com/bao/uploaded/i4/707376852/O1CN01i7IAk920UGZmb3iXQ_!!0-item_pic.jpg",
         "price": 58,
         "name": "正品红双喜羽毛球12只装耐打王训练比赛用一桶3只装6只装打不易烂",
         "vipPrice": 13.5,
