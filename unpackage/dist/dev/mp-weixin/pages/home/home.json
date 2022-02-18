@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "首页",
+  "enablePullDownRefresh": false,
+  "navigationBarBackgroundColor": "#ff0000",
+  "navigationBarTextStyle": "white",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "global-search-header": "/components/globalSearchHeader",
+    "recommend-goods-list": "/components/recommendList/recommendGoodsList"
+  }
+}

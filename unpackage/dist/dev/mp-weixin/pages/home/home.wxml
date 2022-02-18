@@ -1,0 +1,1 @@
+<view><view class="status_bar"><global-search-header vue-id="1da55560-1" bind:__l="__l"></global-search-header><view class="operation">运营位</view><recommend-goods-list vue-id="1da55560-2" bind:__l="__l"></recommend-goods-list></view></view>
