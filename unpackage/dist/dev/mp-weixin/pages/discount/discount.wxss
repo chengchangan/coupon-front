@@ -1,0 +1,6 @@
+
+.nav-bar {
+	height: 25px;
+	width: 100%;
+}
+

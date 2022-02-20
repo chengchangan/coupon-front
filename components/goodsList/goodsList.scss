@@ -1,0 +1,84 @@
+.list-item {
+	display: flex;
+	flex-wrap: wrap;
+	background-color: #f7f7f7;
+	.item {
+		display: flex;
+		width: 100%;
+		height: 240rpx;
+		margin: 5rpx 10rpx 10rpx 10rpx;
+		background-color: #ffffff;
+		border-radius: 10rpx;
+		.pictrue {
+			display: flex;
+			width: 220rpx;
+			margin: 10rpx 10rpx 0rpx 20rpx;
+			image{
+				border-radius: 10rpx;
+				height: 220rpx;
+				background-color: #ffdeaf;
+			}
+		}
+		.info {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			height: 220rpx;
+			margin-top: 10rpx;
+			.title {
+				width: 450rpx;
+				margin-top: 10rpx;
+				margin-bottom: 50rpx;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				display: -webkit-box;
+				-webkit-line-clamp: 2;
+				-webkit-box-orient: vertical;
+				white-space: normal;
+				font-size: 26rpx;
+				// font-family: sans-serif;
+				font-family: monospace;
+				font-weight: bold;
+				color: #333333;
+			}
+			.discount {
+				color: #c4c3c2;
+			}
+			.priceInfo {
+				display: flex;
+				align-items: center;
+				text{
+					font-size: 20rpx;
+					font-weight: normal;
+					color: #7e7d7d;
+					margin-right: 10rpx;
+				}
+				.originPrice{
+					.price {
+						text-decoration: line-through;
+					}
+				}
+				.discountPrice {
+					color: #ff0000;
+					.price{
+						// font-size: medium;
+						color: #ff0000;
+					}
+				}
+				.couponAmount{
+				}
+			}
+			.other {
+				display: flex;
+				justify-content: space-between;
+				text{
+					margin-right: 30rpx;
+					font-size: 20rpx;
+					font-weight: normal;
+					color: #c4c3c2;
+				}
+			}
+		}
+	}
+
+}

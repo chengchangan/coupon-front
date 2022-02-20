@@ -1,0 +1,51 @@
+.app-header{
+	display: flex;
+	flex-direction: column;
+	height: 250rpx;
+	.plat-slogan{
+		display: flex;
+		align-items: flex-end;
+		margin-left: 10rpx;
+		font-size: 40rpx;
+		color: #d81e06;
+		font-style: italic;
+		font-weight: bold;
+		height: 170rpx;
+		background-color: #ffffff;
+		text{
+			margin-bottom: 30rpx;
+		}
+	}
+	.search-line{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 70rpx;
+		margin-left: 10rpx;
+		margin-right: 10rpx;
+		border: 4rpx solid ;
+		color: #d81e06;
+		border-radius: 50rpx;
+		
+		.search-logo{
+			margin-left: 10rpx;
+			height: 60rpx;
+			width: 60rpx;
+		}
+		.search-note{
+		
+		}
+		.search-button{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 60rpx;
+			width: 120rpx;
+			font-size: 35rpx;
+			color: #ffffff;
+			background-color: #f11e06;
+			margin-right: 7rpx;
+			border-radius: 50rpx;
+		}
+	}
+}

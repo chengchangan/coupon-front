@@ -1,22 +1,16 @@
 <template>
 	<view class="recommendList">
-		<view class="sort-condition">
-			<view class="condition" @click="selectedCondition(item)" v-for="(item,index) in conditionItems" :key="index">
-				<text :class="item.show ? 'condition conditionSelected': 'condition'">
-					{{item.name}}
-				</text>
-			</view>
-			
-		</view>
+		
 		<view class="list-item">
 			<view class="item" v-for="(item,index) in items" :key="index">
-
+	
 				<view class="pictrue">
 					<image class="image" :src="item.img" mode="heightFix"></image>
 				</view>
+				
 				<view class="info">
 					<text class="title">{{item.name}}</text>
-					<view class="discount">优惠信息</view>
+					<!-- <view class="discount">优惠信息</view> -->
 					<view class="priceInfo">
 						<text class="originPrice">
 							原价￥
@@ -43,64 +37,20 @@
 						</text>
 					</view>
 				</view>
-
-
+	
 			</view>
 		</view>
-
+	
 	</view>
 </template>
 
 <script>
 	export default {
-		name: "recommendGoodsList",
-		props: {
-
-		},
+		name:"goodsList",
 		data() {
 			return {
-				conditionItems:[
+				items: [
 					{
-						"id":1,
-						"show":true,
-						"name": "推荐"
-					},{
-						"id":2,
-						"show":false,
-						"name": "最热"
-					},{
-						"id":3,
-						"show":false,
-						"name": "最新"
-					}
-					// ,{
-					// 	"id":4,
-					// 	"name": "鞋服"
-					// },{
-					// 	"id":5,
-					// 	"name": "数码"
-					// },{
-					// 	"id":6,
-					// 	"name": "美妆"
-					// },{
-					// 	"id":7,
-					// 	"name": "日用"
-					// },{
-					// 	"id":8,
-					// 	"name": "零食"
-					// }
-					// ,{
-					// 	"id":9,
-					// 	"name": "美妆"
-					// },{
-					// 	"id":10,
-					// 	"name": "日用"
-					// },{
-					// 	"id":11,
-					// 	"name": "零食"
-					// }
-				],
-				items: [{
 						"img": "https://img.alicdn.com/bao/uploaded/i2/4023086328/O1CN01qbWmtk1wcGzVxbfgA_!!0-item_pic.jpg",
 						"id": 576605326949,
 						"price": 108,
@@ -145,7 +95,7 @@
 						"id": 10489420727
 					},
 					{
-						// "img":"https://img.alicdn.com/bao/uploaded/i4/91927293/O1CN01X2zrVM23kFFKDZX75_!!0-item_pic.jpg",
+						"img":"https://img.alicdn.com/bao/uploaded/i4/91927293/O1CN01X2zrVM23kFFKDZX75_!!0-item_pic.jpg",
 						"price": 278,
 						"name": "莹恋DHS红双喜狂飙3省狂蓝海绵省套三乒乓球胶皮球拍反胶套胶正品",
 						"vipPrice": 139,
@@ -156,7 +106,7 @@
 						"id": 4399586113
 					},
 					{
-						// "img":"https://img.alicdn.com/bao/uploaded/i1/1097966962/O1CN01yWcF6a21Ie6mihG4w_!!0-item_pic.jpg",
+						"img":"https://img.alicdn.com/bao/uploaded/i1/1097966962/O1CN01yWcF6a21Ie6mihG4w_!!0-item_pic.jpg",
 						"price": 158,
 						"name": "乒乓球拍胶皮红双喜狂飙3乒乓球胶皮狂飚3反胶套胶普狂三狂3正品",
 						"vipPrice": 108,
@@ -167,7 +117,7 @@
 						"id": 17066442536
 					},
 					{
-						// "img":"https://img.alicdn.com/bao/uploaded/i2/91927293/O1CN01wZDRpp23kFF9ZAEW1_!!0-item_pic.jpg",
+						"img":"https://img.alicdn.com/bao/uploaded/i2/91927293/O1CN01wZDRpp23kFF9ZAEW1_!!0-item_pic.jpg",
 						"price": 135,
 						"name": "莹恋DHS红双喜狂飙3乒乓球胶皮球拍反胶套胶粘性普狂三狂飚3正品",
 						"vipPrice": 108,
@@ -179,29 +129,11 @@
 					}
 				]
 			};
-		},
-		methods:{
-			selectedCondition(condition){
-				this.conditionItems.forEach(item=>item.show=false);
-				condition.show = true
-			}
 		}
 	}
 </script>
 
 <style scoped lang="scss">
-	@import 'recommendGoodsList.scss';
+	@import 'goodsList.scss';
 
-	// .recommendList {
-	// 	width: 100%;
-	// 	// height: 500rpx;
-	// 	// background-color: #555555;
-	// }
-	.sortCondition {
-		width: 100%;
-		height: 50rpx;
-		background-color: #ff0000;
-		margin-top: 10rpx;
-		text-align: center;
-	}
 </style>

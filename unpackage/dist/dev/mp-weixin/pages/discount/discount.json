@@ -1,5 +1,11 @@
 {
-  "navigationBarTitleText": "",
+  "navigationBarTitleText": "优惠",
   "enablePullDownRefresh": false,
-  "usingComponents": {}
+  "navigationStyle": "custom",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "global-search-header": "/components/globalSearchHeader/globalSearchHeader",
+    "goods-category": "/components/goodsCategory/goodsCategory",
+    "goods-list": "/components/goodsList/goodsList"
+  }
 }

@@ -15,8 +15,10 @@
 		}, {
 			"path": "pages/discount/discount",
 			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
+				"navigationBarTitleText": "优惠",
+				"enablePullDownRefresh": false,
+				"navigationStyle":"custom",
+				"navigationBarTextStyle": "white"
 			}
 		}, {
 			"path": "pages/favorite/favorite",

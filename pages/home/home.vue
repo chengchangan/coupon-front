@@ -1,30 +1,35 @@
 <template>
 	<view>
-		<view class="status_bar">
-			
+		<view class="nav-bar">
+			<!-- 首页头部 -->
 			<global-search-header></global-search-header>
-			
-			<view class="operation">运营位</view>
-			
-			<recommend-goods-list></recommend-goods-list>
-			
+			<!-- 中间轮播图 -->
+			<middle-operation></middle-operation>
+			<!-- 排序 -->
+			<sort-condition></sort-condition>
+			<!-- 商品列表 -->
+			<goods-list></goods-list>
 		</view>
 		
 	</view>
 </template>
 
 <script>
-	import GlobalSearchHeader from '../../components/globalSearchHeader.vue';
-	import RecommendGoodsList from '../../components/recommendList/recommendGoodsList.vue';
-	
+	import GlobalSearchHeader from '../../components/globalSearchHeader/globalSearchHeader.vue';
+	import SortCondition from '../../components/sortCondition/sortCondition.vue';
+	import GoodsList from '../../components/goodsList/goodsList.vue';
+	import MiddleOperation from '../../components/middleOperation/middleOperation.vue';
+		
 	export default {
 		components: {
 			GlobalSearchHeader,
-			RecommendGoodsList
+			SortCondition,
+			GoodsList,
+			MiddleOperation
 		},
 		data() {
 			return {
-
+				
 			}
 		},
 		methods: {
@@ -34,16 +39,10 @@
 </script>
 
 <style>
-	.status_bar {
+/* 	.nav-bar {
 		height: var(--status-bar-height);
 		width: 100%;
-	}
+	} */
 
-
-	.operation{
-		width: 100%;
-		height: 300rpx;
-		background-color: #00ff00;
-	}
 
 </style>
