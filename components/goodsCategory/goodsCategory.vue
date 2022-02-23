@@ -7,15 +7,6 @@
 		</view>
 	</view>
 			
-<!-- 		<view>
-			<scroll-view class="scroll-view_H1" scroll-x="true" @scroll="scroll" scroll-left="120">
-				<view id="demo1" class="scroll-view-item_H uni-bg-red">A</view>
-				<view id="demo2" class="scroll-view-item_H uni-bg-green">B</view>
-				<view id="demo3" class="scroll-view-item_H uni-bg-blue">C</view>
-			</scroll-view>
-		</view> -->
-		
-	
 </template>
 
 <script>
@@ -105,11 +96,7 @@
 				this.categoryList.forEach(category => category.show = false);
 				category.show = true;
 				console.log("点击了优惠页面分类", category);
-			},
-			scroll: function(e) {
-				console.log(e)
-			 this.old.scrollTop = e.detail.scrollTop
-			},
+			}
 		}
 	}
 </script>

@@ -8,9 +8,9 @@
 			<!-- 排序 -->
 			<sort-condition></sort-condition>
 			<!-- 商品列表 -->
-			<goods-list></goods-list>
+			<goods-list :items=recommendGoodsList></goods-list>
 		</view>
-		
+
 	</view>
 </template>
 
@@ -19,7 +19,12 @@
 	import SortCondition from '../../components/sortCondition/sortCondition.vue';
 	import GoodsList from '../../components/goodsList/goodsList.vue';
 	import MiddleOperation from '../../components/middleOperation/middleOperation.vue';
-		
+	import {
+		HomeApi
+	} from "./home.js"
+
+
+
 	export default {
 		components: {
 			GlobalSearchHeader,
@@ -29,20 +34,37 @@
 		},
 		data() {
 			return {
-				
+				recommendQuery: {
+					pageIndex: 1,
+					pageSize: 20
+				},
+				recommendGoodsList: []
 			}
 		},
+		created() {
+			this.loadPageList(this.recommendQuery);
+		},
+		onReachBottom() {
+			this.recommendQuery.pageIndex = this.recommendQuery.pageIndex + 1;
+			console.log("滚动到底部了,加载下一页", this.recommendQuery);
+			this.loadPageList(this.recommendQuery);
+		},
 		methods: {
+			loadPageList() {
+				HomeApi.listRecommendGoods(this.recommendQuery)
+					.then(res => {
+						res.data.data.list.forEach(item => this.recommendGoodsList.push(item));
+					});
+			}
+
 
 		}
 	}
 </script>
 
 <style>
-/* 	.nav-bar {
+	/* 	.nav-bar {
 		height: var(--status-bar-height);
 		width: 100%;
 	} */
-
-
 </style>

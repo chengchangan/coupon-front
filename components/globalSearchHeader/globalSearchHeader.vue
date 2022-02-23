@@ -1,6 +1,6 @@
 <template>
 	<view class="app-header">
-		<view class="plat-slogan ">
+		<view class="plat-slogan">
 			<text>没有更便宜 只有最便宜</text>
 		</view>
 		<view class="search-line">

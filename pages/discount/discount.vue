@@ -6,7 +6,7 @@
 			<!-- 商品分类 -->
 			<goods-category></goods-category>
 			<!-- 商品列表 -->
-			<goods-list></goods-list>
+			<!-- <goods-list></goods-list> -->
 		</view>
 	</view>
 	
