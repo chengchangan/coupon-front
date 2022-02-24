@@ -4,6 +4,7 @@
   "navigationBarBackgroundColor": "#ff0000",
   "navigationBarTextStyle": "white",
   "navigationStyle": "custom",
+  "onReachBottomDistance": 500,
   "usingComponents": {
     "global-search-header": "/components/globalSearchHeader/globalSearchHeader",
     "sort-condition": "/components/sortCondition/sortCondition",

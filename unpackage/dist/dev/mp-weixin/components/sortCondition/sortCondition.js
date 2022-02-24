@@ -126,6 +126,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 //
 //
 //
+//
 var _default =
 {
   name: "sortCondition",
@@ -134,8 +135,7 @@ var _default =
 
   data: function data() {
     return {
-      conditionItems: [
-      {
+      conditionItems: [{
         "id": 1,
         "show": true,
         "name": "推荐" },
@@ -149,12 +149,13 @@ var _default =
         "name": "最新" }] };
 
 
-
   },
   methods: {
     selectedCondition: function selectedCondition(condition) {
       this.conditionItems.forEach(function (item) {return item.show = false;});
       condition.show = true;
+      // 通知父组件
+      this.$emit('homeSortConditionChange', condition);
     } } };exports.default = _default;
 
 /***/ }),

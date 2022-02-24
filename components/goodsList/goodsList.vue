@@ -1,13 +1,13 @@
 <template>
 	<view class="recommendList">
-		
+
 		<view class="list-item">
-			<view class="item" v-for="(item,index) in items" :key="index">
-	
+			<view class="item" @click="jumpDetail(item)" v-for="(item,index) in items" :key="index">
+
 				<view class="pictrue">
 					<image class="image" :src="item.mainImage" mode="heightFix"></image>
 				</view>
-				
+
 				<view class="info">
 					<text class="title">{{item.title}}</text>
 					<!-- <view class="discount">优惠信息</view> -->
@@ -15,7 +15,7 @@
 						<text class="originPrice">
 							原价￥
 							<text class="price">
-								{{item.fixedPrice}}	
+								{{item.fixedPrice}}
 							</text>
 						</text>
 						<text>
@@ -37,35 +37,38 @@
 						</text>
 					</view>
 				</view>
-	
+
 			</view>
 		</view>
-	
+
 	</view>
 </template>
 
 <script>
 	export default {
-		name:"goodsList",
+		name: "goodsList",
 		props: {
 			items: {
-				type:Array,
+				type: Array,
 				default: [],
 				required: true
 			}
 		},
 		data() {
 			return {
-				
+
 			};
 		},
-		methods:{
-			
+		methods: {
+			jumpDetail(item) {
+				uni.navigateTo({
+					url: '/components/myWebView/myWebView?url=' + item.jumpUrl
+				})
+			}
 		}
 	}
 </script>
 
 <style scoped lang="scss">
 	@import 'goodsList.scss';
-
 </style>

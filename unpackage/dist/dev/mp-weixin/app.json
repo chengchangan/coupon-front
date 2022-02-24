@@ -3,7 +3,8 @@
     "pages/home/home",
     "pages/discount/discount",
     "pages/favorite/favorite",
-    "pages/my/my"
+    "pages/my/my",
+    "components/myWebView/myWebView"
   ],
   "subPackages": [],
   "window": {

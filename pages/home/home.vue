@@ -6,7 +6,7 @@
 			<!-- 中间轮播图 -->
 			<middle-operation></middle-operation>
 			<!-- 排序 -->
-			<sort-condition></sort-condition>
+			<sort-condition @homeSortConditionChange="homeSortConditionChange"></sort-condition>
 			<!-- 商品列表 -->
 			<goods-list :items=recommendGoodsList></goods-list>
 		</view>
@@ -42,12 +42,12 @@
 			}
 		},
 		created() {
-			this.loadPageList(this.recommendQuery);
+			this.loadPageList();
 		},
 		onReachBottom() {
 			this.recommendQuery.pageIndex = this.recommendQuery.pageIndex + 1;
 			console.log("滚动到底部了,加载下一页", this.recommendQuery);
-			this.loadPageList(this.recommendQuery);
+			this.loadPageList();
 		},
 		methods: {
 			loadPageList() {
@@ -55,6 +55,12 @@
 					.then(res => {
 						res.data.data.list.forEach(item => this.recommendGoodsList.push(item));
 					});
+			},
+			homeSortConditionChange(sortCondition) {
+				this.recommendGoodsList =[];
+				this.recommendQuery.sortCondition = sortCondition.id;
+				this.recommendQuery.pageIndex = 1;
+				this.loadPageList();
 			}
 
 

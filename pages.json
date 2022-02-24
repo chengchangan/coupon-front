@@ -7,7 +7,8 @@
 				"enablePullDownRefresh": false,
 				"navigationBarBackgroundColor": "#ff0000",
 				"navigationBarTextStyle": "white",
-				"navigationStyle":"custom",
+				"navigationStyle": "custom",
+				"onReachBottomDistance": 500,
 				"navigationBarShadow": {
 					"colorType": "blue"
 				}
@@ -17,7 +18,7 @@
 			"style": {
 				"navigationBarTitleText": "优惠",
 				"enablePullDownRefresh": false,
-				"navigationStyle":"custom",
+				"navigationStyle": "custom",
 				"navigationBarTextStyle": "white"
 			}
 		}, {
@@ -32,6 +33,8 @@
 				"navigationBarTitleText": "",
 				"enablePullDownRefresh": false
 			}
+		}, {
+			"path": "components/myWebView/myWebView"
 		}
 	],
 	"globalStyle": {

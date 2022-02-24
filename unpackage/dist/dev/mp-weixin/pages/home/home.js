@@ -180,12 +180,12 @@ var _home = __webpack_require__(/*! ./home.js */ 83);var GlobalSearchHeader = fu
 
   },
   created: function created() {
-    this.loadPageList(this.recommendQuery);
+    this.loadPageList();
   },
   onReachBottom: function onReachBottom() {
     this.recommendQuery.pageIndex = this.recommendQuery.pageIndex + 1;
     console.log("滚动到底部了,加载下一页", this.recommendQuery);
-    this.loadPageList(this.recommendQuery);
+    this.loadPageList();
   },
   methods: {
     loadPageList: function loadPageList() {var _this = this;
@@ -193,6 +193,12 @@ var _home = __webpack_require__(/*! ./home.js */ 83);var GlobalSearchHeader = fu
       then(function (res) {
         res.data.data.list.forEach(function (item) {return _this.recommendGoodsList.push(item);});
       });
+    },
+    homeSortConditionChange: function homeSortConditionChange(sortCondition) {
+      this.recommendGoodsList = [];
+      this.recommendQuery.sortCondition = sortCondition.id;
+      this.recommendQuery.pageIndex = 1;
+      this.loadPageList();
     } } };exports.default = _default;
 
 /***/ }),
