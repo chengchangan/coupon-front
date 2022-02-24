@@ -2,7 +2,9 @@
 	<view>
 		<view class="nav-bar">
 			<!-- 首页头部 -->
-			<global-search-header></global-search-header>
+			<app-header></app-header>
+			<!-- 搜索栏 -->
+			<global-search></global-search>
 			<!-- 中间轮播图 -->
 			<middle-operation></middle-operation>
 			<!-- 排序 -->
@@ -15,19 +17,19 @@
 </template>
 
 <script>
-	import GlobalSearchHeader from '../../components/globalSearchHeader/globalSearchHeader.vue';
+	import AppHeader from '../../components/appHeader/appHeader.vue';
+	import GlobalSearch from '../../components/globalSearch/globalSearch.vue';
 	import SortCondition from '../../components/sortCondition/sortCondition.vue';
 	import GoodsList from '../../components/goodsList/goodsList.vue';
 	import MiddleOperation from '../../components/middleOperation/middleOperation.vue';
-	import {
-		HomeApi
-	} from "./home.js"
+	import {HomeApi} from "./home.js"
 
 
 
 	export default {
 		components: {
-			GlobalSearchHeader,
+			AppHeader,
+			GlobalSearch,
 			SortCondition,
 			GoodsList,
 			MiddleOperation
@@ -57,7 +59,7 @@
 					});
 			},
 			homeSortConditionChange(sortCondition) {
-				this.recommendGoodsList =[];
+				this.recommendGoodsList = [];
 				this.recommendQuery.sortCondition = sortCondition.id;
 				this.recommendQuery.pageIndex = 1;
 				this.loadPageList();

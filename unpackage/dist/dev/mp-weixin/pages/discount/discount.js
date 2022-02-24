@@ -130,7 +130,11 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var GlobalSearchHeader = function GlobalSearchHeader() {__webpack_require__.e(/*! require.ensure | components/globalSearchHeader/globalSearchHeader */ "components/globalSearchHeader/globalSearchHeader").then((function () {return resolve(__webpack_require__(/*! ../../components/globalSearchHeader/globalSearchHeader.vue */ 40));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var GoodsCategory = function GoodsCategory() {__webpack_require__.e(/*! require.ensure | components/goodsCategory/goodsCategory */ "components/goodsCategory/goodsCategory").then((function () {return resolve(__webpack_require__(/*! ../../components/goodsCategory/goodsCategory.vue */ 68));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var GoodsList = function GoodsList() {__webpack_require__.e(/*! require.ensure | components/goodsList/goodsList */ "components/goodsList/goodsList").then((function () {return resolve(__webpack_require__(/*! ../../components/goodsList/goodsList.vue */ 54));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var AppHeader = function AppHeader() {__webpack_require__.e(/*! require.ensure | components/appHeader/appHeader */ "components/appHeader/appHeader").then((function () {return resolve(__webpack_require__(/*! ../../components/appHeader/appHeader.vue */ 91));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var GlobalSearch = function GlobalSearch() {__webpack_require__.e(/*! require.ensure | components/globalSearch/globalSearch */ "components/globalSearch/globalSearch").then((function () {return resolve(__webpack_require__(/*! ../../components/globalSearch/globalSearch.vue */ 40));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var GoodsCategory = function GoodsCategory() {__webpack_require__.e(/*! require.ensure | components/goodsCategory/goodsCategory */ "components/goodsCategory/goodsCategory").then((function () {return resolve(__webpack_require__(/*! ../../components/goodsCategory/goodsCategory.vue */ 68));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var GoodsList = function GoodsList() {__webpack_require__.e(/*! require.ensure | components/goodsList/goodsList */ "components/goodsList/goodsList").then((function () {return resolve(__webpack_require__(/*! ../../components/goodsList/goodsList.vue */ 54));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
+
+
+
 
 
 
@@ -151,7 +155,8 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 {
   components: {
-    GlobalSearchHeader: GlobalSearchHeader,
+    AppHeader: AppHeader,
+    GlobalSearch: GlobalSearch,
     GoodsCategory: GoodsCategory,
     GoodsList: GoodsList },
 

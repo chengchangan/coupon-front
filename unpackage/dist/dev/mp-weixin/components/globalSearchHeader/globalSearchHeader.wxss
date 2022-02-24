@@ -24,48 +24,29 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.app-header.data-v-7678b878 {
-  display: flex;
-  flex-direction: column;
-  height: 250rpx;
-}
-.app-header .plat-slogan.data-v-7678b878 {
-  display: flex;
-  align-items: flex-end;
-  margin-left: 10rpx;
-  font-size: 40rpx;
-  color: #d81e06;
-  font-style: italic;
-  font-weight: bold;
-  height: 170rpx;
-  background-color: #ffffff;
-}
-.app-header .plat-slogan text.data-v-7678b878 {
-  margin-bottom: 30rpx;
-}
-.app-header .search-line.data-v-7678b878 {
+.search-line.data-v-7678b878 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 70rpx;
+  height: 50rpx;
   margin-left: 10rpx;
   margin-right: 10rpx;
   border: 4rpx solid;
   color: #d81e06;
   border-radius: 50rpx;
 }
-.app-header .search-line .search-logo.data-v-7678b878 {
+.search-line .search-logo.data-v-7678b878 {
   margin-left: 10rpx;
-  height: 60rpx;
-  width: 60rpx;
+  height: 40rpx;
+  width: 40rpx;
 }
-.app-header .search-line .search-button.data-v-7678b878 {
+.search-line .search-button.data-v-7678b878 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60rpx;
-  width: 120rpx;
-  font-size: 35rpx;
+  height: 40rpx;
+  width: 90rpx;
+  font-size: 30rpx;
   color: #ffffff;
   background-color: #f11e06;
   margin-right: 7rpx;
