@@ -1,0 +1,51 @@
+.main-search{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 20rpx;
+	margin-top: 170rpx;;
+	margin-left: 10rpx;
+	margin-right: 10rpx;
+	
+	.go-back-logo{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-left: 10rpx;
+		height: 40rpx;
+		width: 40rpx;
+	}
+	.search {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 50rpx;
+		width: 94%;
+		border: 2rpx solid ;
+		color: #d81e06;
+		border-radius: 50rpx;
+		.input-button{
+			width: 80%;
+			color: #000000;
+			margin-left: 20rpx;
+		}
+		.search-button{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 40rpx;
+			width: 80rpx;
+			font-size: 25rpx;
+			color: #ffffff;
+			background-color: #f11e06;
+			margin-right: 7rpx;
+			border-radius: 50rpx;
+			
+		}
+		
+		
+	}
+	
+	
+	
+}

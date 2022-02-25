@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view class="search-line">
+		<view class="search-line" @click="jumpSearch">
 			<image class="search-logo" src="../../static/search-logo.png"></image>
 			<text class="search-note">苹果13</text>
 			<text class="search-button">搜索</text>
@@ -15,6 +15,11 @@
 			return {
 
 			};
+		},
+		methods: {
+			jumpSearch(){
+				this.$emit("clickSearch");
+			}
 		}
 	}
 </script>

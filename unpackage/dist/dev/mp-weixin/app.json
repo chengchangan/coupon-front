@@ -4,7 +4,10 @@
     "pages/discount/discount",
     "pages/favorite/favorite",
     "pages/my/my",
-    "components/myWebView/myWebView"
+    "components/myWebView/myWebView",
+    "pages/search/globalSearchPage/globalSearchPage",
+    "pages/search/globalSearchPageResult/globalSearchPageResult",
+    "pages/search/globalSearchPage/globalSearchPage"
   ],
   "subPackages": [],
   "window": {

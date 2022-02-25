@@ -136,7 +136,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
 
 
@@ -161,6 +161,8 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 var _home = __webpack_require__(/*! ./home.js */ 83);var AppHeader = function AppHeader() {__webpack_require__.e(/*! require.ensure | components/appHeader/appHeader */ "components/appHeader/appHeader").then((function () {return resolve(__webpack_require__(/*! ../../components/appHeader/appHeader.vue */ 91));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var GlobalSearch = function GlobalSearch() {__webpack_require__.e(/*! require.ensure | components/globalSearch/globalSearch */ "components/globalSearch/globalSearch").then((function () {return resolve(__webpack_require__(/*! ../../components/globalSearch/globalSearch.vue */ 40));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var SortCondition = function SortCondition() {__webpack_require__.e(/*! require.ensure | components/sortCondition/sortCondition */ "components/sortCondition/sortCondition").then((function () {return resolve(__webpack_require__(/*! ../../components/sortCondition/sortCondition.vue */ 47));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var GoodsList = function GoodsList() {__webpack_require__.e(/*! require.ensure | components/goodsList/goodsList */ "components/goodsList/goodsList").then((function () {return resolve(__webpack_require__(/*! ../../components/goodsList/goodsList.vue */ 54));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var MiddleOperation = function MiddleOperation() {__webpack_require__.e(/*! require.ensure | components/middleOperation/middleOperation */ "components/middleOperation/middleOperation").then((function () {return resolve(__webpack_require__(/*! ../../components/middleOperation/middleOperation.vue */ 61));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
+
 
 
 
@@ -201,7 +203,14 @@ var _home = __webpack_require__(/*! ./home.js */ 83);var AppHeader = function Ap
       this.recommendQuery.sortCondition = sortCondition.id;
       this.recommendQuery.pageIndex = 1;
       this.loadPageList();
+    },
+    jumpSearch: function jumpSearch() {
+      // 跳转到主搜页面
+      uni.navigateTo({
+        url: '../search/globalSearchPage/globalSearchPage' });
+
     } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 /* 18 */

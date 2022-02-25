@@ -4,7 +4,7 @@
 			<!-- 首页头部 -->
 			<app-header></app-header>
 			<!-- 搜索栏 -->
-			<global-search></global-search>
+			<global-search @clickSearch="jumpSearch"></global-search>
 			<!-- 中间轮播图 -->
 			<middle-operation></middle-operation>
 			<!-- 排序 -->
@@ -22,7 +22,9 @@
 	import SortCondition from '../../components/sortCondition/sortCondition.vue';
 	import GoodsList from '../../components/goodsList/goodsList.vue';
 	import MiddleOperation from '../../components/middleOperation/middleOperation.vue';
-	import {HomeApi} from "./home.js"
+	import {
+		HomeApi
+	} from "./home.js"
 
 
 
@@ -63,6 +65,12 @@
 				this.recommendQuery.sortCondition = sortCondition.id;
 				this.recommendQuery.pageIndex = 1;
 				this.loadPageList();
+			},
+			jumpSearch() {
+				// 跳转到主搜页面
+				uni.navigateTo({
+					url: '../search/globalSearchPage/globalSearchPage'
+				})
 			}
 
 

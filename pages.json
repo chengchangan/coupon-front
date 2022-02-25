@@ -8,7 +8,7 @@
 				"navigationBarBackgroundColor": "#ff0000",
 				"navigationBarTextStyle": "white",
 				"navigationStyle": "custom",
-				"onReachBottomDistance": 500,
+				"onReachBottomDistance": 800,
 				"navigationBarShadow": {
 					"colorType": "blue"
 				}
@@ -35,8 +35,35 @@
 			}
 		}, {
 			"path": "components/myWebView/myWebView"
+		},
+		{
+			"path": "pages/search/globalSearchPage/globalSearchPage",
+			"style": {
+				"navigationBarTitleText": "主搜页",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom",
+				"navigationBarTextStyle": "white"
+			}
+		},{
+			"path": "pages/search/globalSearchPageResult/globalSearchPageResult",
+			"style": {
+				"navigationBarTitleText": "主搜结果页",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom",
+				"onReachBottomDistance": 800,
+				"navigationBarTextStyle": "white"
+			}
 		}
-	],
+	    ,{
+            "path" : "pages/search/globalSearchPage/globalSearchPage",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",

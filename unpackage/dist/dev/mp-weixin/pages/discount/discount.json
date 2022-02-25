@@ -4,7 +4,8 @@
   "navigationStyle": "custom",
   "navigationBarTextStyle": "white",
   "usingComponents": {
-    "global-search-header": "/components/globalSearchHeader/globalSearchHeader",
+    "app-header": "/components/appHeader/appHeader",
+    "global-search": "/components/globalSearch/globalSearch",
     "goods-category": "/components/goodsCategory/goodsCategory",
     "goods-list": "/components/goodsList/goodsList"
   }
