@@ -5,6 +5,7 @@
   "navigationBarTextStyle": "white",
   "usingComponents": {
     "app-header": "/components/appHeader/appHeader",
+    "do-global-search": "/components/doGlobalSearch/doGlobalSearch",
     "global-search": "/components/globalSearch/globalSearch",
     "goods-category": "/components/goodsCategory/goodsCategory",
     "goods-list": "/components/goodsList/goodsList"

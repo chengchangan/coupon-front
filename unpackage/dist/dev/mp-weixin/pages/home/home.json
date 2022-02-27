@@ -4,7 +4,7 @@
   "navigationBarBackgroundColor": "#ff0000",
   "navigationBarTextStyle": "white",
   "navigationStyle": "custom",
-  "onReachBottomDistance": 800,
+  "onReachBottomDistance": 1000,
   "usingComponents": {
     "app-header": "/components/appHeader/appHeader",
     "global-search": "/components/globalSearch/globalSearch",

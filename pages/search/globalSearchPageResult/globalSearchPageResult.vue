@@ -1,7 +1,6 @@
 <template>
-	<view>
-		<do-global-search @doSearch="doSearch"></do-global-search>
-		以下是搜索结果
+	<view class="search-page-result">
+		<do-global-search :keyword="searchQuery.keyword" @doSearch="doSearch"></do-global-search>
 		<goods-list :items="searchGoodsList"></goods-list>
 	</view>
 </template>
@@ -12,6 +11,8 @@
 	import {
 		GlobalSearchApi
 	} from './globalSearchPageResult.js';
+	import Common from "@/libs/common.js";
+
 
 	export default {
 		components: {
@@ -28,8 +29,10 @@
 			}
 		},
 		onLoad: function(param) {
+			// 页面加载时,获取传递的参数、加载后台数据、展示等待中logo
 			console.log("搜索结果页收到参数：", param);
 			this.searchQuery.keyword = param.keyword;
+			Common.showToast();
 			this.loadPageList();
 		},
 		onReachBottom() {
@@ -38,16 +41,24 @@
 			this.loadPageList();
 		},
 		methods: {
+			doSearch(param) {
+				Common.showToast();
+				this.searchQuery.keyword = param.keyword;
+				this.searchQuery.pageIndex = 1;
+				this.searchGoodsList = [];
+				this.loadPageList();
+			},
 			loadPageList() {
 				GlobalSearchApi.searchGoods(this.searchQuery)
 					.then(res => {
 						res.data.data.list.forEach(item => this.searchGoodsList.push(item));
+						uni.hideToast();
 					});
 			},
 		}
 	}
 </script>
 
-<style>
-
+<style scoped lang="scss">
+	@import 'globalSearchPageResult.scss';
 </style>

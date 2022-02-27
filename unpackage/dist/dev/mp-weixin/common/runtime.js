@@ -105,11 +105,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"components/appHeader/appHeader":1,"components/globalSearch/globalSearch":1,"components/goodsList/goodsList":1,"components/middleOperation/middleOperation":1,"components/sortCondition/sortCondition":1,"components/goodsCategory/goodsCategory":1,"components/doGlobalSearch/doGlobalSearch":1};
+/******/ 		var cssChunks = {"components/appHeader/appHeader":1,"components/globalSearch/globalSearch":1,"components/goodsList/goodsList":1,"components/middleOperation/middleOperation":1,"components/sortCondition/sortCondition":1,"components/doGlobalSearch/doGlobalSearch":1,"components/goodsCategory/goodsCategory":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"components/appHeader/appHeader":"components/appHeader/appHeader","components/globalSearch/globalSearch":"components/globalSearch/globalSearch","components/goodsList/goodsList":"components/goodsList/goodsList","components/middleOperation/middleOperation":"components/middleOperation/middleOperation","components/sortCondition/sortCondition":"components/sortCondition/sortCondition","components/goodsCategory/goodsCategory":"components/goodsCategory/goodsCategory","components/doGlobalSearch/doGlobalSearch":"components/doGlobalSearch/doGlobalSearch"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"components/appHeader/appHeader":"components/appHeader/appHeader","components/globalSearch/globalSearch":"components/globalSearch/globalSearch","components/goodsList/goodsList":"components/goodsList/goodsList","components/middleOperation/middleOperation":"components/middleOperation/middleOperation","components/sortCondition/sortCondition":"components/sortCondition/sortCondition","components/doGlobalSearch/doGlobalSearch":"components/doGlobalSearch/doGlobalSearch","components/goodsCategory/goodsCategory":"components/goodsCategory/goodsCategory"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {

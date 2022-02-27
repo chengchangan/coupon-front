@@ -8,7 +8,7 @@
 				"navigationBarBackgroundColor": "#ff0000",
 				"navigationBarTextStyle": "white",
 				"navigationStyle": "custom",
-				"onReachBottomDistance": 800,
+				"onReachBottomDistance": 1000,
 				"navigationBarShadow": {
 					"colorType": "blue"
 				}
@@ -24,13 +24,13 @@
 		}, {
 			"path": "pages/favorite/favorite",
 			"style": {
-				"navigationBarTitleText": "",
+				"navigationBarTitleText": "关注",
 				"enablePullDownRefresh": false
 			}
 		}, {
 			"path": "pages/my/my",
 			"style": {
-				"navigationBarTitleText": "",
+				"navigationBarTitleText": "我的",
 				"enablePullDownRefresh": false
 			}
 		}, {
@@ -44,26 +44,17 @@
 				"navigationStyle": "custom",
 				"navigationBarTextStyle": "white"
 			}
-		},{
+		}, {
 			"path": "pages/search/globalSearchPageResult/globalSearchPageResult",
 			"style": {
 				"navigationBarTitleText": "主搜结果页",
 				"enablePullDownRefresh": false,
 				"navigationStyle": "custom",
-				"onReachBottomDistance": 800,
+				"onReachBottomDistance": 1000,
 				"navigationBarTextStyle": "white"
 			}
 		}
-	    ,{
-            "path" : "pages/search/globalSearchPage/globalSearchPage",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",

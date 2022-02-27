@@ -6,8 +6,7 @@
     "pages/my/my",
     "components/myWebView/myWebView",
     "pages/search/globalSearchPage/globalSearchPage",
-    "pages/search/globalSearchPageResult/globalSearchPageResult",
-    "pages/search/globalSearchPage/globalSearchPage"
+    "pages/search/globalSearchPageResult/globalSearchPageResult"
   ],
   "subPackages": [],
   "window": {

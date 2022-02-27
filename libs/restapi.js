@@ -1,7 +1,8 @@
 export default class RestApi {
 
 	static baseUrl() {
-		return "http://localhost:1002";
+		return "http://192.168.3.6:1002";
+		// return "http://101.34.35.72:1002";
 	}
 
 

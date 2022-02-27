@@ -2,8 +2,6 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin-top: 20rpx;
-	margin-top: 170rpx;;
 	margin-left: 10rpx;
 	margin-right: 10rpx;
 	
@@ -13,14 +11,14 @@
 		align-items: center;
 		margin-left: 10rpx;
 		height: 40rpx;
-		width: 40rpx;
+		width: 6%;
 	}
 	.search {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		height: 50rpx;
-		width: 94%;
+		width: 100%;
 		border: 2rpx solid ;
 		color: #d81e06;
 		border-radius: 50rpx;

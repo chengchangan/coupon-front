@@ -2,11 +2,11 @@
 	<view class="category">
 		<view class="category-item" @click="selectedCategory(item)" v-for="(item,index) in categoryList" :key=index>
 			<text :class="item.show ? 'category-item-selected': ''">
-			{{item.name}}
+				{{item.name}}
 			</text>
 		</view>
 	</view>
-			
+
 </template>
 
 <script>
@@ -14,16 +14,10 @@
 		name: "goodsCategory",
 		data() {
 			return {
-				categoryList: [
-					{
-						"id": 1,
-						"name": "精选",
-						"show": true
-					},
-					{
+				categoryList: [{
 						"id": 2,
 						"name": "数码",
-						"show": false,
+						"show": true,
 						"child": [{
 								"id": 11,
 								"name": "手机"
@@ -91,11 +85,29 @@
 				]
 			};
 		},
+		created() {
+			console.log("分类加载了")
+			// 加载默认选中
+			let category;
+			this.categoryList.forEach(item => {
+				if (item.id === 2) {
+					category = item;
+					return;
+				}
+			})
+			this.selectedCategory(category);
+		},
 		methods: {
 			selectedCategory(category) {
-				this.categoryList.forEach(category => category.show = false);
-				category.show = true;
-				console.log("点击了优惠页面分类", category);
+				// 点击的当前分类置反，其他范雷置灰
+				category.show = !category.show;
+				this.categoryList.forEach(item => {
+					if (category.id != item.id) {
+						item.show = false;
+					}
+				});
+				console.log("选中了分类:", category)
+				this.$emit("categoryChange", category);
 			}
 		}
 	}
