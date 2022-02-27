@@ -1,0 +1,34 @@
+.search-page{
+	margin-top: 170rpx;
+	
+	.history-search{
+		display: flex;
+		flex-direction: column;
+		margin-top: 20rpx;
+		height: 240rpx;
+		overflow: hidden;
+		.history-title{
+			margin-left: 20rpx;
+			font-size: 35rpx;
+			font-weight: bold;
+		}
+		.history-item-wapper{
+			display: flex;
+			flex-wrap: wrap;
+			// height: 500rpx;
+			
+			.history-item{
+				background-color: #ebebeb;
+				padding: 5rpx 20rpx 5rpx 20rpx;
+				margin: 20rpx;
+				border-radius: 40rpx;
+				
+				max-width: 200rpx;
+				overflow: hidden;
+				text-overflow:ellipsis;
+				white-space: nowrap;
+			}
+		}
+		
+	}
+}
