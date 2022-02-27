@@ -101,4 +101,8 @@
   font-weight: normal;
   color: #c4c3c2;
 }
+.data-v-06b6466e::-webkit-scrollbar {
+  /* 隐藏滚动条 */
+  display: none;
+}
 

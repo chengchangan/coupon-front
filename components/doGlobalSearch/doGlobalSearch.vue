@@ -11,6 +11,8 @@
 </template>
 
 <script>
+	import Common from "@/libs/common.js";
+
 	export default {
 		components: {},
 		name: "mainSearch",
@@ -51,7 +53,12 @@
 				console.log("输入的内容", this.inputValue)
 			},
 			search() {
-				console.log("search keyword:", this.inputValue)
+				// 处理情况：搜索页 -> 结果页后，再次点击搜索，此时inputValue 是空的
+				if (Common.isEmpty(this.inputValue) && !Common.isEmpty(this.keyword)) {
+					this.inputValue = this.keyword;
+				}
+				console.log("search keyword:", this.keyword)
+				console.log("search inputValue:", this.inputValue)
 				this.$emit("doSearch", {
 					"keyword": this.inputValue
 				})

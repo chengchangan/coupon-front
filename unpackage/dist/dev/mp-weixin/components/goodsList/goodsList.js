@@ -177,9 +177,52 @@ var _default =
   },
   methods: {
     jumpDetail: function jumpDetail(item) {
-      uni.navigateTo({
-        url: '/components/myWebView/myWebView?url=' + item.jumpUrl });
+      if (plus.os.name == 'Android') {
+        plus.runtime.launchApplication({
+          pname: 'com.example.thunder' },
 
+        function (e) {
+          console.log('Open system default browser failed: ' + e.message);
+        });
+
+      } else if (plus.os.name == 'iOS') {
+        this.handleOpenTaobao(item.jumpUrl);
+        // plus.runtime.launchApplication({
+        // 	action: 'taobao://s.taobao.com/search?q=' + item.jumpUrl
+        // }, (e) => {
+        // 	console.log('Open system default browser failed: ' + e.message);
+        // });
+      }
+
+      // uni.navigateTo({
+      // 	url: '/components/myWebView/myWebView?url=' + item.jumpUrl
+      // })
+    },
+    handleOpenTaobao: function handleOpenTaobao(url) {
+      // 淘宝的商品链接，换成需要访问的地址
+      // let url =
+      // 	"https://detail.tmall.com/item.htm?spm=a230r.1.14.1.3d4b76f0LV6kFy&id=605165654577&ns=1&abbucket=6";
+      var openUrl = url;
+      // 因为 url 一般是从其它地方获取的，所以这里要将 http 和 https 删去
+      // 也可以直接输入 https:// 之后的内容，则不需要此步判断，直接调用 plus.runtime.openURL
+      if (url.substr(0, 5) === 'https') {
+        openUrl = "taobao://".concat(url.substr(8));
+      } else if (url.substr(0, 4) === 'http') {
+        openUrl = "taobao:".concat(url.substr(7));
+      } else {
+        openUrl = "taobao:".concat(url);
+      }
+      console.log("打开的链接为：", openUrl);
+      plus.runtime.openURL(openUrl, function (res) {
+        uni.showModal({
+          content: '本机未检测到对应客户端，是否打开浏览器访问页面？',
+          success: function success(res) {
+            if (res.confirm) {
+              plus.runtime.openURL(url);
+            }
+          } });
+
+      });
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

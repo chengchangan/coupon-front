@@ -2238,6 +2238,16 @@ function normalizeComponent (
         mask: true,
         duration: 20000 });
 
+    }
+
+
+    //判断字符是否为空的方法
+  }, { key: "isEmpty", value: function isEmpty(obj) {
+      if (typeof obj == "undefined" || obj == null || obj == "") {
+        return true;
+      } else {
+        return false;
+      }
     } }]);return Common;}();exports.default = Common;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

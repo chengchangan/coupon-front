@@ -1,6 +1,6 @@
 <template>
 	<view class="search-page-result">
-		<do-global-search :keyword="searchQuery.keyword" @doSearch="doSearch"></do-global-search>
+		<do-global-search :keyword="keyword" @doSearch="doSearch"></do-global-search>
 		<goods-list :items="searchGoodsList"></goods-list>
 	</view>
 </template>
@@ -21,6 +21,7 @@
 		},
 		data() {
 			return {
+				keyword: "",
 				searchQuery: {
 					pageIndex: 1,
 					pageSize: 10
@@ -31,6 +32,7 @@
 		onLoad: function(param) {
 			// 页面加载时,获取传递的参数、加载后台数据、展示等待中logo
 			console.log("搜索结果页收到参数：", param);
+			this.keyword = param.keyword;
 			this.searchQuery.keyword = param.keyword;
 			Common.showToast();
 			this.loadPageList();
