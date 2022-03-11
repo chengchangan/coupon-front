@@ -22,5 +22,14 @@ export default class RestApi {
 		});
 	}
 
+	static execute(options) {
+		options.header = {
+			'Authorization' : 'Bearer ' + token,
+			'Content-Type' : 'application/json'
+		}
+
+
+	}
+
 
 }
