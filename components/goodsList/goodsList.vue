@@ -10,23 +10,27 @@
 
 				<view class="info">
 					<text class="title">{{item.title}}</text>
-					<!-- <view class="discount">优惠信息</view> -->
+					
 					<view class="priceInfo">
-						<text class="originPrice">
+						
+						<text class="origin-price-title">
 							原价￥
-							<text class="price">
-								{{item.fixedPrice}}
-							</text>
 						</text>
-						<text>
-							券后价
-							<text class="discountPrice">
-								￥<text class="price">{{item.discountFixedPrice}}</text>
-							</text>
+						<text class="origin-price-amount">
+							{{item.fixedPrice}}
 						</text>
-						<text class="couponAmount">
+						
+						<text class="coupon-price-title">
+							券后价￥
+						</text>
+						<text class="coupon-price-amount">
+							{{item.discountFixedPrice}}
+						</text>
+						
+						<text class="coupon-amount" v-if="item.couponAmount > 0">
 							省￥{{item.couponAmount}}
 						</text>
+						
 					</view>
 					<view class="other">
 						<text>
@@ -60,7 +64,12 @@
 			};
 		},
 		methods: {
-			jumpDetail(item) {
+			jumpDetail(item){
+				uni.navigateTo({
+					url: '/pages/goodsDetail/goodsDetail?itemId=' + item.itemId
+				})
+			},
+			jumpDetailBack(item) {
 				if (plus.os.name == 'Android') {
 					plus.runtime.launchApplication({
 							pname: 'com.example.thunder'
@@ -78,9 +87,7 @@
 					// });
 				}
 
-				// uni.navigateTo({
-				// 	url: '/components/myWebView/myWebView?url=' + item.jumpUrl
-				// })
+				
 			},
 			handleOpenTaobao(url) {
 				// 淘宝的商品链接，换成需要访问的地址

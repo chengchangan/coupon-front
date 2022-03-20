@@ -28,8 +28,10 @@
 			margin-top: 10rpx;
 			.title {
 				width: 450rpx;
+				// height: 80rpx;
 				margin-top: 10rpx;
-				margin-bottom: 50rpx;
+				margin-bottom: 30rpx;
+				
 				overflow: hidden;
 				text-overflow: ellipsis;
 				display: -webkit-box;
@@ -42,31 +44,38 @@
 				font-weight: bold;
 				color: #333333;
 			}
-			.discount {
-				color: #c4c3c2;
-			}
+
 			.priceInfo {
 				display: flex;
 				align-items: center;
+				
 				text{
-					font-size: 20rpx;
+					font-size: 24rpx;
 					font-weight: normal;
 					color: #7e7d7d;
-					margin-right: 10rpx;
 				}
-				.originPrice{
-					.price {
-						text-decoration: line-through;
-					}
+				.origin-price-title{
+					
 				}
-				.discountPrice {
+				.origin-price-amount{
+					text-decoration: line-through;
+				}
+				
+				.coupon-price-title{
+					margin-left: 20rpx;
 					color: #ff0000;
-					.price{
-						// font-size: medium;
-						color: #ff0000;
-					}
 				}
-				.couponAmount{
+				.coupon-price-amount {
+					color: #ff0000;
+					font-size: 30rpx;
+				}
+				
+				.coupon-amount{
+					color: #ff0000;
+					font-size: 26rpx;
+					font-weight: 600;
+					padding-right: 50rpx;
+					margin-left:auto;
 				}
 			}
 			.other {
@@ -76,14 +85,10 @@
 					margin-right: 30rpx;
 					font-size: 20rpx;
 					font-weight: normal;
-					color: #c4c3c2;
+					color: #7e7d7d;
 				}
 			}
 		}
 	}
 
-}
-::-webkit-scrollbar {
-  /* 隐藏滚动条 */
-  display: none;
 }

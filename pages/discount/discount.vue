@@ -3,8 +3,8 @@
 		<view class="nav-bar">
 			<!-- 首页头部 -->
 			<app-header></app-header>
-			<!-- 头部主搜 -->
-			<do-global-search :showGoback=false @doSearch="doSearch"></do-global-search>
+			<!-- 搜索栏 -->
+			<global-search @clickSearch="jumpSearch"></global-search>
 			<!-- 商品分类 -->
 			<goods-category @categoryChange="categoryChange"></goods-category>
 			<!-- 商品列表 -->
@@ -16,7 +16,6 @@
 
 <script>
 	import AppHeader from '../../components/appHeader/appHeader.vue';
-	import DoGlobalSearch from '../../components/doGlobalSearch/doGlobalSearch.vue';
 	import GlobalSearch from '../../components/globalSearch/globalSearch.vue';
 	import GoodsCategory from '../../components/goodsCategory/goodsCategory.vue';
 	import GoodsList from '../../components/goodsList/goodsList.vue';
@@ -28,7 +27,6 @@
 	export default {
 		components: {
 			AppHeader,
-			DoGlobalSearch,
 			GlobalSearch,
 			GoodsCategory,
 			GoodsList
@@ -48,12 +46,11 @@
 			this.loadPageList();
 		},
 		methods: {
-			doSearch(param) {
-				Common.showToast();
-				this.searchQuery.keyword = param.keyword;
-				this.searchQuery.pageIndex = 1;
-				this.searchGoodsList = [];
-				this.loadPageList();
+			jumpSearch() {
+				// 跳转到主搜页面
+				uni.navigateTo({
+					url: '../search/globalSearchPage/globalSearchPage'
+				})
 			},
 			categoryChange(category){
 				Common.showToast();

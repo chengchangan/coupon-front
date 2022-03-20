@@ -14,10 +14,15 @@
 		name: "goodsCategory",
 		data() {
 			return {
-				categoryList: [{
+				categoryList: [
+					{
+						"id": 1,
+						"name": "全部",
+						"show": false
+					},{
 						"id": 2,
 						"name": "数码",
-						"show": true,
+						"show": false,
 						"child": [{
 								"id": 11,
 								"name": "手机"
@@ -90,9 +95,8 @@
 			// 加载默认选中
 			let category;
 			this.categoryList.forEach(item => {
-				if (item.id === 2) {
+				if (item.id === 1) {
 					category = item;
-					return;
 				}
 			})
 			this.selectedCategory(category);

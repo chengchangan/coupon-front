@@ -15,7 +15,7 @@ export default class RestApi {
 	}
 
 
-	static doGet(path, data) {
+	static doGet(path) {
 		return uni.request({
 			url: this.baseUrl() + path,
 			method: "GET"

@@ -1,0 +1,190 @@
+.goods-detail{
+	background-color: #75ffff;
+	// background-color: #f7f7f7;
+}
+.detail-image{
+	width: 100%;
+	height: 700rpx;
+	margin-top: 10rpx;
+	.banner{
+		height: 100%;
+		.banner-img{
+			border-radius: 10rpx;
+			height: 100%;
+			width: 100%;
+			background-color: #ffdeaf;
+		}
+	}
+}
+
+// 商品信息
+.detail-info{
+	margin: 10rpx;
+	margin-top: 15rpx;
+	display: flex;
+	flex-direction: column;
+	
+	background-color: #ffffff;
+	border-radius: 10rpx;
+	
+	// 标题
+	.title {
+		margin: 20rpx 20rpx 0rpx 20rpx;
+		
+		overflow: hidden;
+		// text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		white-space: normal;
+		
+		.platform{
+			margin-right: 10rpx;
+			
+			padding-left: 8rpx;
+			padding-right: 8rpx;
+			
+			font-size: 27rpx;
+			color: #ffffff;
+			border-radius: 8rpx;
+			background-color: #ff0000;
+			
+		}
+		.title-text{
+			font-weight: 700;
+			font-size: 32rpx;
+			color: #262626;
+			font-family: inherit;
+		}
+		
+	}
+	
+	// 价格信息
+	.price-info {
+		display: flex;
+		// justify-content: space-between;
+		align-items: center;
+		margin: 20rpx 20rpx 0rpx 20rpx;
+		font-size: 25rpx;
+		
+		.after-price-title {
+			color: #ff0000;
+		}
+		.after-price-icon{
+			color: #ff0000;
+		}
+		.after-price-num {
+			color: #ff0000;
+			font-weight: 700;
+			font-size: 40rpx;
+		}
+		.origin-price{
+			margin-left: 30rpx;
+			color: #7e7d7d;
+		}
+		.coupon-amount {
+			margin-left: 30rpx;
+			font-size: 30rpx;
+			font-weight: 500;
+			color: #ff0000;
+		}
+		.sell-num{
+			margin-left:auto;
+			color: #7e7d7d;
+		}
+		
+	}
+	
+	// 优惠券信息
+	.coupon-info {
+		margin: 20rpx 20rpx 30rpx 20rpx;
+		background-image: url(../../static/coupon_bg.png);
+		background-size: contain;
+		background-repeat: no-repeat;
+		height: 122rpx;
+		
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		
+		color: #ffffff;
+		
+		.coupon-info-wapper {
+			padding-left: 20rpx;
+			
+			.coupon-amount-wapper {
+				// padding-left: 50rpx;
+				.coupon-amount {
+					font-weight: 600;
+					font-size: 50rpx;
+				}
+			}
+			.coupon-date {
+				font-size: 24rpx;
+			}
+		}
+		
+		.coupon-button {
+			font-size: 36rpx;
+			padding-right: 40rpx;
+		}
+	}
+	
+}
+
+// 服务信息 包邮等
+.detail-serve{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 10rpx;
+	margin-top: 30rpx;
+	padding: 20rpx;
+	
+	background-color: #ffffff;
+	// background-color: #00aaff;
+	border-radius: 10rpx;
+	height: 100rpx;
+	
+	color: #7e7d7d;
+	font-size: 28rpx;
+	
+	.delivery-local {
+		display: flex;
+		justify-content: space-between;
+	}
+	.serve {
+		display: flex;
+		margin-top: 10rpx;
+		.serve-item {
+			margin-left: 20rpx;
+			padding-left: 32rpx;
+			background-image: url(../../static/serve-tag.png);
+			background-size: 24rpx;
+			background-position-y: center;
+			background-repeat: no-repeat;
+		}
+	}
+	
+}
+
+.recommend {
+	margin: 30rpx 10rpx 10rpx 10rpx;
+	padding-top: 20rpx;
+	
+	
+	background-color: #ffffff;
+	// background-color: #00aaff;
+	border-radius: 10rpx;
+	background-color: #f7f7f7;
+	
+	
+	.recommend-title {
+		text-align: center;
+		font-size: 30rpx;
+		font-weight: 600;
+		
+	}
+}
+
+

@@ -37,18 +37,3 @@
   /* 隐藏滚动条 */
   display: none;
 }
-
-
-
-
-.scroll-view_H1{
-	display: flex;
-	flex-direction: row;
-	// overflow-x: auto;
-	
-	view{
-		width: 70rpx;
-		// height: 20rpx;
-		background-color: #007AFF;
-	}
-}

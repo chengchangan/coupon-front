@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view class="nav-bar">
+		<view>
 			<!-- 首页头部 -->
 			<app-header></app-header>
 			<!-- 搜索栏 -->
@@ -79,8 +79,5 @@
 </script>
 
 <style>
-	/* 	.nav-bar {
-		height: var(--status-bar-height);
-		width: 100%;
-	} */
+
 </style>
