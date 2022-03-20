@@ -90,7 +90,7 @@
 
 			</view>
 		</view>
-()
+
 		<goods-nav @openExternalApp="openExternalApp()"></goods-nav>
 		
 		<view class="recommend">
