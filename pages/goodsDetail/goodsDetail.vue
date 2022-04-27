@@ -15,7 +15,7 @@
 			<!-- 标题 -->
 			<view class="title">
 				<text class="platform">{{goodsDetail.platform}}</text>
-				<text class="title-text">
+				<text class="title-text" @longpress="copyTitle">
 					{{goodsDetail.title}}
 				</text>
 
@@ -24,7 +24,7 @@
 			<!-- 价格 -->
 			<view class="price-info">
 				<text class="after-price-title">
-					券后价
+					到手价
 				</text>
 				<text class="after-price-icon">
 					￥
@@ -42,7 +42,7 @@
 				</text>
 
 				<text class="sell-num">
-					{{goodsDetail.totalSales}}笔成交
+					{{goodsDetail.monthSales}}笔成交
 				</text>
 			</view>
 
@@ -170,6 +170,11 @@
 					loop: true
 				});
 			},
+      copyTitle() {
+        uni.setClipboardData({
+          data: this.goodsDetail.title
+        })
+      },
 			favorite() {
 				GoodsDetailApi.favorite(this.goodsDetail.productId)
 					.then(res => {
