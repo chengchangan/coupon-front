@@ -7,4 +7,8 @@ export class HomeApi extends RestApi {
 	}
 
 
+	static login(data) {
+		let param = "username=" + data.username + "&password=" + data.password;
+		return RestApi.doPost("/user/login?" + param, null);
+	}
 }

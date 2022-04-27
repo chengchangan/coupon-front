@@ -1,0 +1,103 @@
+.user{
+	background-color: #f7f7f7;
+}
+
+.user-info {
+	display: flex;
+	align-items: center;
+	
+	.head-img {
+		width: 130rpx;
+		height: 130rpx;
+		margin: 10rpx 10rpx 0rpx 20rpx;
+		background-image: url(../../static/default-header-img.png);
+		border-radius: 80rpx;
+		background-color: #fffdd8;
+
+		background-size: 130rpx;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+	
+	.user-nick{
+		margin-left: 30rpx;
+	}
+	
+	.setting{
+		margin-left:auto;
+		padding-right: 30rpx;
+	}
+}
+
+
+.tool{
+	display: flex;
+	
+	flex-direction: column;
+	
+	margin: 20rpx;
+	margin-top: 50rpx;
+	padding: 20rpx;
+	
+	
+	background-color: #ffffff;
+	border-radius: 10rpx;
+	
+	color: #7e7d7d;
+	font-size: 28rpx;
+	
+}
+
+.tool-title {
+	display: flex;
+	height: 70rpx;
+	border-bottom-style: solid;
+	border-width: 2rpx;
+	border-color: #999999;
+}
+
+.tool-nav{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin-top: 30rpx;
+	margin-left: 20rpx;
+	margin-right: 20rpx;
+}
+
+.nav-item {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	width: 156rpx;
+	
+	.nav-icon {
+		height: 60rpx;
+		width: 60rpx;
+		background-size: 60rpx;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+	.nav-icon-favorite{
+		background-image: url(../../static/xihuan.png);
+	}
+	.nav-icon-depreciate{
+		background-image: url(../../static/jiangjia.png);
+	}
+	.nav-icon-browse{
+		background-image: url(../../static/zuji.png);
+	}
+	.nav-icon-service{
+		background-image: url(../../static/kefu.png);
+	}
+	.nav-icon-other{
+		background-image: url(../../static/qita.png);
+	}
+	.nav-title {
+		margin-top: 20rpx;
+	}
+}
+
+

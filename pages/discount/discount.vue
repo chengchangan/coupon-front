@@ -52,7 +52,7 @@
 					url: '../search/globalSearchPage/globalSearchPage'
 				})
 			},
-			categoryChange(category){
+			categoryChange(category) {
 				Common.showToast();
 				this.searchQuery.keyword = category.name;
 				this.searchQuery.pageIndex = 1;
@@ -63,7 +63,7 @@
 				DiscountSearchApi.searchGoods(this.searchQuery)
 					.then(res => {
 						res.data.data.list.forEach(item => this.searchGoodsList.push(item));
-						uni.hideToast();
+						Common.hideToast();
 					});
 			},
 		}

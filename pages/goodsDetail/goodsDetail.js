@@ -10,4 +10,11 @@ export class GoodsDetailApi extends RestApi {
 		return RestApi.doGet("/product/getDetail/" + itemId)
 	}
 
+	static favorite(productId) {
+		return RestApi.doGet("/attentionProduct/favorite/" + productId)
+	}
+	
+	static recommend(productId) {
+		return RestApi.doGet("/attentionProduct/recommend/" + productId)
+	}
 }

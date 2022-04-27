@@ -1,32 +1,36 @@
 export default class RestApi {
 
 	static baseUrl() {
-		// return "http://192.168.3.6:1002";
-		return "http://39.108.97.141:1002";
+		return "http://172.18.36.57:1002";
+		// return "http://39.108.97.141:1002";
 	}
 
 
 	static doPost(path, data) {
-		return uni.request({
-			url: this.baseUrl() + path,
-			method: "POST",
-			data: data
-		});
+		return this.execute('POST', path, null, data);
 	}
 
 
 	static doGet(path) {
-		return uni.request({
-			url: this.baseUrl() + path,
-			method: "GET"
-		});
+		return this.execute('GET', path, null, null);
 	}
 
-	static execute(options) {
-		options.header = {
-			'Authorization' : 'Bearer ' + token,
-			'Content-Type' : 'application/json'
+	static execute(method, path, param, body) {
+
+		if (param) {
+			let requestParam = "";
+			for(let key in param) {
+				requestParam = requestParam + key + "=" + param[key] + "&";
+			}
+			requestParam = requestParam.substr(0, requestParam.length - 1);
+			path = path + "?" + requestParam;
 		}
+
+		return uni.request({
+			url: this.baseUrl() + path,
+			method: method,
+			data: body
+		});
 
 
 	}

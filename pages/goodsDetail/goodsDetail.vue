@@ -91,8 +91,9 @@
 			</view>
 		</view>
 
-		<goods-nav @openExternalApp="openExternalApp()"></goods-nav>
-		
+		<goods-nav :favorite=goodsDetail.favorite :recommend=goodsDetail.recommend @favorite="favorite" @share="share"
+			@recommend="recommend" @openExternalApp="openExternalApp()"></goods-nav>
+
 		<view class="recommend">
 			<view class="recommend-title">
 				猜你喜欢
@@ -120,7 +121,7 @@
 		},
 		data() {
 			return {
-				
+
 				indicatorDots: true,
 				duration: 500,
 				circular: true,
@@ -134,12 +135,7 @@
 			}
 		},
 		onLoad: function(param) {
-			GoodsDetailApi.getGoodsDetail(param.itemId)
-				.then(res => {
-					this.goodsDetail = res.data.data;
-				}).catch(e => {
-					console.log("加载失败", e)
-				})
+			this.loadGoodsDetail(param.itemId);
 		},
 		created() {
 			this.loadPageList();
@@ -151,6 +147,14 @@
 			this.loadPageList();
 		},
 		methods: {
+			loadGoodsDetail(itemId) {
+				GoodsDetailApi.getGoodsDetail(itemId)
+					.then(res => {
+						this.goodsDetail = res.data.data;
+					}).catch(e => {
+						console.log("加载失败", e)
+					})
+			},
 			loadPageList() {
 				GoodsDetailApi.listRecommendGoods(this.recommendQuery)
 					.then(res => {
@@ -166,6 +170,22 @@
 					loop: true
 				});
 			},
+			favorite() {
+				GoodsDetailApi.favorite(this.goodsDetail.productId)
+					.then(res => {
+						this.loadGoodsDetail(this.goodsDetail.itemId);
+					});
+			},
+			share() {
+				console.log("分享:", this.goodsDetail.title)
+			},
+			recommend() {
+				GoodsDetailApi.recommend(this.goodsDetail.productId)
+					.then(res => {
+						this.loadGoodsDetail(this.goodsDetail.itemId);
+					});
+			},
+
 			openExternalApp() {
 				let jumpUrl = this.goodsDetail.jumpUrl;
 				if (plus.os.name == 'Android') {
