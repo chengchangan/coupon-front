@@ -16,6 +16,7 @@ uni.addInterceptor('request', {
 				'token': LoginUtil.getToken()
 			}
 		}
+		// console.log("客户端类型：",plus.os.name)
 	},
 	success(args) {
 		// 可以判断是否 403,去登录页面
@@ -48,7 +49,11 @@ uni.addInterceptor({
 				if (res[0]) {
 					reject(res[0])
 				} else {
-					resolve(res[1])
+					if (res[1].data) {
+						resolve(res[1].data)
+					} else {
+						resolve(res[1])
+					}
 				}
 			})
 		})

@@ -25,9 +25,8 @@
 <script>
 	import GoodsList from '../../components/goodsList/goodsList.vue';
 	import StoreUtil from '@/libs/storeUtil.js';
-	import {
-		FavoriteApi
-	} from './favorite.js';
+	import {ProductApi} from '@/libs/api/productApi.js';
+		
 
 	export default {
 		components: {
@@ -115,9 +114,9 @@
 					}
 				});
 
-				FavoriteApi.attentionGoodsList(this.queryParam)
+				ProductApi.attentionGoodsList(this.queryParam)
 					.then(res => {
-						res.data.data.list.forEach(item => this.attentionGoodsList.push(item));
+						res.data.list.forEach(item => this.attentionGoodsList.push(item));
 						uni.hideToast();
 					});
 			}

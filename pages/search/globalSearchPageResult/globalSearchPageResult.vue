@@ -9,8 +9,8 @@
 	import DoGlobalSearch from '../../../components/doGlobalSearch/doGlobalSearch.vue';
 	import GoodsList from '../../../components/goodsList/goodsList.vue';
 	import {
-		GlobalSearchApi
-	} from './globalSearchPageResult.js';
+		ProductApi
+	} from '@/libs/api/productApi.js';
 	import Common from "@/libs/common.js";
 
 
@@ -51,9 +51,9 @@
 				this.loadPageList();
 			},
 			loadPageList() {
-				GlobalSearchApi.searchGoods(this.searchQuery)
+				ProductApi.searchGoods(this.searchQuery)
 					.then(res => {
-						res.data.data.list.forEach(item => this.searchGoodsList.push(item));
+						res.data.list.forEach(item => this.searchGoodsList.push(item));
 						uni.hideToast();
 					});
 			},

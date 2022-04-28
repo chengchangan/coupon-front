@@ -20,9 +20,9 @@
 	import GoodsCategory from '../../components/goodsCategory/goodsCategory.vue';
 	import GoodsList from '../../components/goodsList/goodsList.vue';
 	import Common from '@/libs/common.js';
-	import {
-		DiscountSearchApi
-	} from './discount.js';
+	import {ProductApi} from '@/libs/api/productApi.js';
+	
+
 
 	export default {
 		components: {
@@ -60,9 +60,9 @@
 				this.loadPageList();
 			},
 			loadPageList() {
-				DiscountSearchApi.searchGoods(this.searchQuery)
+				ProductApi.searchGoods(this.searchQuery)
 					.then(res => {
-						res.data.data.list.forEach(item => this.searchGoodsList.push(item));
+						res.data.list.forEach(item => this.searchGoodsList.push(item));
 						Common.hideToast();
 					});
 			},

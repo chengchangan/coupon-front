@@ -110,9 +110,8 @@
 <script>
 	import GoodsList from '../../components/goodsList/goodsList.vue';
 	import GoodsNav from '../../components/goodsNav/goodsNav.vue';
-	import {
-		GoodsDetailApi
-	} from "./goodsDetail.js"
+	import {ProductApi} from '@/libs/api/productApi.js';
+	
 
 	export default {
 		components: {
@@ -148,17 +147,17 @@
 		},
 		methods: {
 			loadGoodsDetail(itemId) {
-				GoodsDetailApi.getGoodsDetail(itemId)
+				ProductApi.getGoodsDetail(itemId)
 					.then(res => {
-						this.goodsDetail = res.data.data;
+						this.goodsDetail = res.data;
 					}).catch(e => {
 						console.log("加载失败", e)
 					})
 			},
 			loadPageList() {
-				GoodsDetailApi.listRecommendGoods(this.recommendQuery)
+				ProductApi.listRecommendGoods(this.recommendQuery)
 					.then(res => {
-						res.data.data.list.forEach(item => this.recommendGoodsList.push(item));
+						res.data.list.forEach(item => this.recommendGoodsList.push(item));
 					});
 			},
 			// 预览图片多张
@@ -176,7 +175,7 @@
         })
       },
 			favorite() {
-				GoodsDetailApi.favorite(this.goodsDetail.productId)
+				ProductApi.favorite(this.goodsDetail.productId)
 					.then(res => {
 						this.loadGoodsDetail(this.goodsDetail.itemId);
 					});
@@ -185,7 +184,7 @@
 				console.log("分享:", this.goodsDetail.title)
 			},
 			recommend() {
-				GoodsDetailApi.recommend(this.goodsDetail.productId)
+				ProductApi.recommend(this.goodsDetail.productId)
 					.then(res => {
 						this.loadGoodsDetail(this.goodsDetail.itemId);
 					});

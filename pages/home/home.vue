@@ -22,10 +22,7 @@
 	import SortCondition from '../../components/sortCondition/sortCondition.vue';
 	import GoodsList from '../../components/goodsList/goodsList.vue';
 	import MiddleOperation from '../../components/middleOperation/middleOperation.vue';
-	import {
-		HomeApi
-	} from "./home.js"
-
+	import {ProductApi} from '@/libs/api/productApi.js';
 
 
 	export default {
@@ -55,9 +52,9 @@
 		},
 		methods: {
 			loadPageList() {
-				HomeApi.listRecommendGoods(this.recommendQuery)
+				ProductApi.listRecommendGoods(this.recommendQuery)
 					.then(res => {
-						res.data.data.list.forEach(item => this.recommendGoodsList.push(item));
+						res.data.list.forEach(item => this.recommendGoodsList.push(item));
 					});
 			},
 			homeSortConditionChange(sortCondition) {

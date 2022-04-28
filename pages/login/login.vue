@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view class="login">
 		<view>
 			<text>欢迎来到登录页面</text>
 		</view>
@@ -25,7 +25,9 @@
 <script>
 	import LoginUtil from '@/libs/loginUtil.js'
 	import Common from "@/libs/common.js"
-	import {HomeApi} from '../home/home.js'
+	import {ProductApi} from '@/libs/api/productApi.js';
+	
+	
 	export default {
 		data() {
 			return {
@@ -40,10 +42,9 @@
 				console.log(JSON.stringify(formdata));
 				
 				
-				HomeApi.login(formdata).then(res=>{
-					let data = res.data;
-					LoginUtil.saveTokenAndUser(data.data);
-					Common.showCustomToast(data.msg);
+				ProductApi.login(formdata).then(res=>{
+					LoginUtil.saveTokenAndUser(res.data);
+					Common.showCustomToast(res.msg);
 					
 					uni.navigateBack({
 						delta: 1,
@@ -58,8 +59,6 @@
 	}
 </script>
 
-<style>
-.uni-form-item .title {
-		padding: 20rpx 0;
-	}
+<style scoped lang="scss">
+	@import 'login.scss';
 </style>
