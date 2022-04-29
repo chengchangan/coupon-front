@@ -9,10 +9,8 @@
 			<view class="user-nick">
 				<text>{{user.userNick}}</text>
 			</view>
-			<view class="setting">
-				<text>
-					设置
-				</text>
+			<view class="setting" @click="setting">
+				<image class="setting-img"></image>
 			</view>
 
 		</view>
@@ -87,6 +85,9 @@
 				uni.switchTab({
 					url: '/pages/favorite/favorite'
 				})
+			},
+			setting(){
+				
 			},
 			waitImpl() {
 				Common.showCustomToast('等待精彩呈现哦~');

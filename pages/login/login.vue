@@ -1,20 +1,24 @@
 <template>
 	<view class="login">
 		<view>
-			<text>欢迎来到登录页面</text>
+			<image class="go-back-logo" @click="goBack" src="../../static/go-back.png"></image>
 		</view>
-		<form @submit="login">
-			<view class="uni-form-item uni-column">
-				<label class="title">账号</label>
-				<input class="uni-input" name="username" type="text" placeholder="请输入手机号" />
-			</view>
-			<view class="uni-form-item uni-column">
-				<label>密码</label>
-				<input class="uni-input" name="password" type="text" password placeholder="请输入密码" />
-			</view>
+		<view class="login-prompt-wrapper">
+			<text class="login-title">账号密码登录</text>
+			<text class="login-prompt">没有账户？
+				<text class="prompt">登录自动创建</text>
+			</text>
+		</view>
 
-			<view class="uni-btn-v">
-				<button form-type="submit">登录</button>
+		<form class="login-form" @submit="login">
+			<view>
+				<input class="login-input" name="username" type="text" placeholder-style="color:#9e9e9e" placeholder="请输入手机号" />
+			</view>
+			<view>
+				<input class="login-input" name="password" type="text" placeholder-style="color:#9e9e9e" password placeholder="请输入密码" />
+			</view>
+			<view class="login-button">
+				<button form-type="submit" type="warn">登录</button>
 			</view>
 		</form>
 
@@ -25,9 +29,11 @@
 <script>
 	import LoginUtil from '@/libs/loginUtil.js'
 	import Common from "@/libs/common.js"
-	import {ProductApi} from '@/libs/api/productApi.js';
-	
-	
+	import {
+		ProductApi
+	} from '@/libs/api/productApi.js';
+
+
 	export default {
 		data() {
 			return {
@@ -37,23 +43,28 @@
 		methods: {
 			login(e) {
 				console.log("登录：", e);
-				
+
 				var formdata = e.detail.value
 				console.log(JSON.stringify(formdata));
-				
-				
-				ProductApi.login(formdata).then(res=>{
+
+
+				ProductApi.login(formdata).then(res => {
 					LoginUtil.saveTokenAndUser(res.data);
 					Common.showCustomToast(res.msg);
-					
+
 					uni.navigateBack({
 						delta: 1,
 						animationType: 'pop-out',
 						animationDuration: 200
 					});
-				}).catch(e=>{
-					
+				}).catch(e => {
+
 				});
+			},
+			goBack(){
+				uni.switchTab({
+					url: '/pages/home/home'
+				})
 			}
 		}
 	}
