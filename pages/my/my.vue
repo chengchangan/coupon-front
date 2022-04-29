@@ -9,8 +9,8 @@
 			<view class="user-nick">
 				<text>{{user.userNick}}</text>
 			</view>
-			<view class="setting" @click="setting">
-				<image class="setting-img"></image>
+			<view class="logout" @click="logout">
+				<image class="logout-img"></image>
 			</view>
 
 		</view>
@@ -68,6 +68,9 @@
 	import LoginUtil from '@/libs/loginUtil.js'
 	import StoreUtil from '@/libs/storeUtil.js'
 	import Common from '@/libs/common.js'
+	import {
+		ProductApi
+	} from '@/libs/api/productApi.js';
 
 	export default {
 		data() {
@@ -86,8 +89,10 @@
 					url: '/pages/favorite/favorite'
 				})
 			},
-			setting(){
-				
+			logout() {
+				ProductApi.logout().then(res => {
+					LoginUtil.logoutSuccess();
+				});
 			},
 			waitImpl() {
 				Common.showCustomToast('等待精彩呈现哦~');

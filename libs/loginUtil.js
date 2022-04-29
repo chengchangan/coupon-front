@@ -41,4 +41,13 @@ export default class LoginUtil {
 		return uni.getStorageSync(this.userKey());
 	}
 
+	static logoutSuccess() {
+		uni.removeStorageSync(this.tokenKey());
+		uni.removeStorageSync(this.userKey());
+		uni.switchTab({
+			url: '/pages/home/home'
+		});
+
+	}
+
 }

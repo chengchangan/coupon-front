@@ -42,7 +42,6 @@
 		},
 		methods: {
 			login(e) {
-				console.log("登录：", e);
 
 				var formdata = e.detail.value
 				console.log(JSON.stringify(formdata));
@@ -51,7 +50,8 @@
 				ProductApi.login(formdata).then(res => {
 					LoginUtil.saveTokenAndUser(res.data);
 					Common.showCustomToast(res.msg);
-
+					
+					// 登录成功后退回上一级
 					uni.navigateBack({
 						delta: 1,
 						animationType: 'pop-out',
