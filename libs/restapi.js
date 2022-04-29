@@ -1,8 +1,8 @@
 export default class RestApi {
 
 	static baseUrl() {
-		return "http://172.18.36.57:1002";
-		// return "http://39.108.97.141:1002";
+		// return "http://172.18.36.57:1002";
+		return "http://39.108.97.141:1002";
 	}
 
 
@@ -16,10 +16,10 @@ export default class RestApi {
 	}
 
 	static execute(method, path, param, body) {
-
+		// 封装param参数
 		if (param) {
 			let requestParam = "";
-			for(let key in param) {
+			for (let key in param) {
 				requestParam = requestParam + key + "=" + param[key] + "&";
 			}
 			requestParam = requestParam.substr(0, requestParam.length - 1);
