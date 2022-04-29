@@ -12,13 +12,15 @@
 
 		<form class="login-form" @submit="login">
 			<view>
-				<input class="login-input" name="username" type="text" placeholder-style="color:#9e9e9e" placeholder="请输入手机号" />
+				<input class="login-input" name="username" @blur="checkUserName" type="text" placeholder-style="color:#9e9e9e"
+					placeholder="请输入手机号" />
 			</view>
 			<view>
-				<input class="login-input" name="password" type="text" placeholder-style="color:#9e9e9e" password placeholder="请输入密码" />
+				<input class="login-input"  name="password" type="text"
+					placeholder-style="color:#9e9e9e" password placeholder="请输入密码" />
 			</view>
 			<view class="login-button">
-				<button form-type="submit" type="warn">登录</button>
+				<button form-type="submit" :disabled="true" type="warn">登录</button>
 			</view>
 		</form>
 
@@ -41,6 +43,14 @@
 			}
 		},
 		methods: {
+			checkUserName(event) {
+				console.log("离开用户名")
+				var value = event.target.value;
+				if (value === '11') {
+					this.changeValue = '2';
+				}
+
+			},
 			login(e) {
 
 				var formdata = e.detail.value
@@ -50,7 +60,7 @@
 				ProductApi.login(formdata).then(res => {
 					LoginUtil.saveTokenAndUser(res.data);
 					Common.showCustomToast(res.msg);
-					
+
 					// 登录成功后退回上一级
 					uni.navigateBack({
 						delta: 1,
@@ -61,7 +71,7 @@
 
 				});
 			},
-			goBack(){
+			goBack() {
 				uni.switchTab({
 					url: '/pages/home/home'
 				})
