@@ -22,6 +22,7 @@ export default class LoginUtil {
 	}
 
 	static goLogin() {
+		this.clearLoginInfo();
 		uni.navigateTo({
 			url: '/pages/login/login'
 		});
@@ -42,12 +43,16 @@ export default class LoginUtil {
 	}
 
 	static logoutSuccess() {
-		uni.removeStorageSync(this.tokenKey());
-		uni.removeStorageSync(this.userKey());
+		this.clearLoginInfo();
 		uni.switchTab({
 			url: '/pages/home/home'
 		});
 
+	}
+
+	static clearLoginInfo() {
+		uni.removeStorageSync(this.tokenKey());
+		uni.removeStorageSync(this.userKey());
 	}
 
 }

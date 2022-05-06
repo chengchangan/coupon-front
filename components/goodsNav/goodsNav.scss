@@ -12,6 +12,7 @@
 	z-index: 2;
 	bottom: 0rpx;
 
+	margin-left: 20rpx;
 	.nav-item {
 		display: flex;
 		flex-direction: column;
@@ -19,7 +20,8 @@
 		justify-content: center;
 		align-items: center;
 		
-		margin-left: 60rpx;
+		padding-left: 30rpx;
+		padding-right: 30rpx;
 		
 		.nav-icon {
 			height: 40rpx;
@@ -29,6 +31,21 @@
 			background-size: 40rpx;
 			background-position: center;
 			background-repeat: no-repeat;
+		}
+		.favorite-icon{
+			background-image: url(../../static/shoucang.png);
+		}
+		.favorite-selected-icon {
+			background-image: url(../../static/shoucang-1.png);
+		}
+		.recommend-icon{
+			background-image: url(../../static/tuijian.png);
+		}
+		.recommend-selected-icon {
+			background-image: url(../../static/tuijian-1.png);
+		}
+		.share-icon{
+			background-image: url(../../static/share.png);
 		}
 		.nav-title {
 			font-size: 20rpx;

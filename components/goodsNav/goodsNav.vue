@@ -2,9 +2,8 @@
 	<view>
 		<view class="goods-nav">
 
-			<view class="nav-item" @click="clicked(item)" v-for="(item,index) in this.computedGoodsNavs" :key=index>
-				<view class="nav-icon" :style="{'backgroundImage': 'url(' + item.showIcon + ')'}">
-				</view>
+			<view class="nav-item" @click="clicked(item)" v-for="(item,index) in this.computedGoodsNavs()" :key=index>
+				<view :class="item.showIcon"></view>
 				<text class="nav-title">{{item.navTitle}}</text>
 			</view>
 
@@ -29,7 +28,29 @@
 				default: false
 			}
 		},
-		computed: {
+		data() {
+			return {
+				goodsNavs: [{
+						"icon": "nav-icon favorite-icon",
+						"selectedIcon": "nav-icon favorite-selected-icon",
+						"navTitle": "收藏",
+						"clickEvent": "favorite"
+					},
+					{
+						"icon": "nav-icon recommend-icon",
+						"selectedIcon": "nav-icon recommend-selected-icon",
+						"navTitle": "推荐",
+						"clickEvent": "recommend"
+					},
+					{
+						"icon": "nav-icon share-icon",
+						"navTitle": "分享",
+						"clickEvent": "share"
+					}
+				]
+			};
+		},
+		methods: {
 			computedGoodsNavs() {
 				this.goodsNavs.forEach(item => {
 					item.showIcon = item.icon;
@@ -41,31 +62,7 @@
 					}
 				})
 				return this.goodsNavs;
-			}
-		},
-		data() {
-			return {
-				goodsNavs: [{
-						"icon": "../../static/shoucang.png",
-						"selectedIcon": "../../static/shoucang-1.png",
-						"navTitle": "收藏",
-						"clickEvent": "favorite"
-					},
-					{
-						"icon": "../../static/tuijian.png",
-						"selectedIcon": "../../static/tuijian-1.png",
-						"navTitle": "推荐",
-						"clickEvent": "recommend"
-					},
-					{
-						"icon": "../../static/share.png",
-						"navTitle": "分享",
-						"clickEvent": "share"
-					}
-				]
-			};
-		},
-		methods: {
+			},
 			clicked(item) {
 				LoginUtil.checkAndGoLogin();
 				this.$emit(item.clickEvent);
