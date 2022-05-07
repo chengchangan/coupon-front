@@ -1,5 +1,9 @@
 import LoginUtil from "@/libs/loginUtil.js"
 import Common from "@/libs/common.js"
+import {
+	hex_md5,
+	hex_hmac_md5
+} from "@/libs/md5.js"
 
 function isPromise(obj) {
 	return !!obj && (typeof obj === 'object' || typeof obj === 'function') && typeof obj.then === 'function'
@@ -8,18 +12,28 @@ function isPromise(obj) {
 
 uni.addInterceptor('request', {
 	invoke(args) {
-
-		let token = LoginUtil.getToken();
 		// 请求发出前的拦截
+		
+		let header = {};
+		let token = LoginUtil.getToken();
+		// 1、token补充
 		if (!Common.isEmpty(token)) {
-			args.header = {
-				'token': LoginUtil.getToken()
-			}
+			header.token = token;
 		}
+		
+		// 2、客户端类型补充 todo
 		// console.log("客户端类型：",plus.os.name)
+
+		// 3、有效请求标识
+		let timestamp = Date.now();
+		let signMark = hex_md5('sm' + timestamp);
+		header.timestamp = timestamp;
+		header.sign_mark = signMark;
+
+		args.header = header;
 	},
 	success(args) {
-		// 可以判断是否 403,去登录页面
+		// 可以判断是否 401,去登录页面
 		if (args.data.status === 401) {
 			LoginUtil.goLogin();
 		}

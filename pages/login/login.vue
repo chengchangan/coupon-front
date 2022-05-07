@@ -62,11 +62,9 @@
 			},
 			login(e) {
 
-				var formdata = e.detail.value
-				console.log(JSON.stringify(formdata));
+				let formData = e.detail.value
 
-
-				ProductApi.login(formdata).then(res => {
+				ProductApi.login(formData).then(res => {
 					LoginUtil.saveTokenAndUser(res.data);
 					Common.showCustomToast(res.msg);
 

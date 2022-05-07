@@ -61,9 +61,6 @@
 				attentionGoodsList: []
 			}
 		},
-		created() {
-			this.loadPageList();
-		},
 		onShow: function() {
 			console.log("页面加载了");
 			/**
